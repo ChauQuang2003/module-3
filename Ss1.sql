@@ -1,12 +1,12 @@
 create database Ss1;
 use Ss1;
  
-create table Class (
+create table class (
 id int primary key,
 name varchar(50)
 );
 
-create table Teacher (
+create table teacher (
 id int primary key,
 name varchar(50),
 age int,
