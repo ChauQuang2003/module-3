@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9fe66c92-7c49-403c-b43a-2acb685497b4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../ss9/demo_web/src/main/java/controller/RoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9/demo_web/src/main/java/model/PaymentMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9/demo_web/src/main/java/model/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9/demo_web/src/main/java/service/ConnecToMySQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9/demo_web/src/main/java/service/IRoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ss9/demo_web/src/main/java/service/RoomService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bootstrap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_Css_Nhung.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss6_Dinh_Dang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_Layout_RWD.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_Web_Hoat_Hinh.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss7_Web_Hoat_Hinh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss1.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss2. Xay_dung_co_so_du_lieu_quan_ly_ban_hang.mwb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss2. Xay_dung_co_so_du_lieu_quan_ly_ban_hang.mwb.beforefix" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss2.ERD.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss4.CSDL_QuanLySinhVien.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss4.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ss5.View_Index_Store_Procedure.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3.CSDL_Quan_Ly_Ban_Hang.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ss3.Quan_ly_sinh_vien.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2p8mk0HG3k0X3sBbrd1HjKRcY3L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/BTVN_CodeGym/Module3/Css/ss8",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9fe66c92-7c49-403c-b43a-2acb685497b4" name="Changes" comment="" />
+      <created>1732156215454</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732156215454</updated>
+      <workItem from="1732156216453" duration="328000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
