@@ -4,11 +4,16 @@ import com.codegym.productmanager_mvc.model.Product;
 
 import java.util.List;
 
-public interface IProductService {
-    List<Product> findAll();
-    void add(Product product);
-    void update(int id, Product product);
+public interface IProductService <E>{
+    List<Product> getAll();
+
+    void add(E product);
+
     void delete(int id);
-    Product findById(int id);
-    List<Product> searchByName(String name);
+
+    E findById(int id);
+
+    void update(int id, E product);
+
+    List<E> findByString(String keyword);
 }
