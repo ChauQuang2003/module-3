@@ -1,14 +1,14 @@
 package model;
 
-public class Payment {
+public class Category {
     private int id;
     private String name;
     private String description;
 
-    public Payment() {
+    public Category() {
     }
 
-    public Payment(int id, String name, String description) {
+    public Category(int id, String name,  String description) {
         this.id = id;
         this.name = name;
         this.description = description;

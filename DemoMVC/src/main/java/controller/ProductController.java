@@ -110,7 +110,7 @@ public class ProductController extends HttpServlet {
             Product newProduct = new Product(id, name, price, image);
             productService.add(newProduct);
             resp.sendRedirect("/products?path=home");
-
+    
         } catch (Exception e) {
             showErrorPage(req, resp);
         }

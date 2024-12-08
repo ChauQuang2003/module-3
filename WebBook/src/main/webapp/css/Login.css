@@ -1,0 +1,47 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('https://placehold.co/1920x1080') no-repeat center center fixed;
+    background-size: cover;
+}
+.login-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-box {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+.login-box input {
+    margin-bottom: 20px;
+}
+.login-box .form-check-label {
+    color: white;
+}
+.login-box .btn-primary {
+    background-color: #ff4081;
+    border: none;
+}
+.login-box .btn-primary:hover {
+    background-color: #e60073;
+}
+.login-box .social-buttons .btn {
+    width: 48%;
+    margin: 5px 1%;
+}
+.login-box .or-separator {
+    margin: 20px 0;
+    font-size: 18px;
+}
+.login-box .footer-text {
+    margin-top: 20px;
+    font-size: 12px;
+}
