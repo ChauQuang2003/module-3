@@ -67,11 +67,6 @@
                                 </option>
                             </c:forEach>
                         </select>
-                    <%--                        <select id="inputState" class="form-control" name="idCategory">--%>
-<%--                            <c:forEach items="${categories}" var="category">--%>
-<%--                                <option value="${category.id}">${category.name}</option>--%>
-<%--                            </c:forEach>--%>
-<%--                        </select>--%>
                     </div>
                     <div class="form-group col-md-2">
                         <label for="inputZip">Quantity</label>

@@ -8,5 +8,6 @@ public interface IProductService<E> {
     List<E> findAll();
     void edit(int id, E e);
     E findById(int id);
+    List<E> findByName(String name);
 
 }

@@ -10,81 +10,8 @@
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-<%--    <link href="/css/home.css" rel="stylesheet">--%>
+    <link href="/css/home.css" rel="stylesheet">
 </head>
-<style>
-    .confirm-checkbox {
-        display: none;
-    }
-
-    .confirm-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Đảm bảo nền mờ */
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
-
-    .modal-content {
-        background: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        width: 300px;
-        text-align: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .modal-content p {
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 20px;
-    }
-
-    .btn {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 5px;
-        text-decoration: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    .confirm-checkbox:checked + .confirm-modal {
-        display: flex;
-    }
-
-    .btn-danger {
-        background-color: #e74c3c;
-        color: white;
-        border: none;
-    }
-
-    .btn-secondary {
-        background-color: #ccc;
-        color: #333;
-        border: none;
-    }
-    .hero-section img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-    }
-    .product-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-
-</style>
 <body>
 <!-- Top Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -145,14 +72,13 @@
     </div>
 </nav>
 <div class="container my-4">
-    <form action="${pageContext.request.contextPath}/products" method="get">
+    <form action="/products?action=search" method="get">
         <div class="row">
             <div class="col-md-8">
-                <input type="hidden" name="action" value="search">
-                <input type="text" class="form-control" name="keyword" placeholder="Tìm kiếm sản phẩm theo tên hoặc ID..." required>
-                <button type="submit" class="btn btn-primary w-100">Tìm kiếm</button>
+                <input type="text" class="form-control" name="query" placeholder="Tìm kiếm sản phẩm theo tên hoặc ID..." required>
             </div>
             <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Tìm kiếm</button>
             </div>
         </div>
     </form>
@@ -167,7 +93,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <c:forEach items="${products}" var="product">
+<%--            <c:forEach items="${products}" var="product">--%>
                 <div class="product-card">
                     <div class="discount">
                     </div>
@@ -178,7 +104,7 @@
                             ${product.name}
                     </h5>
                     <p class="description">
-                        ${product.description}
+                            ${product.description}
                     </p>
                     <p class="price">
                     </p>
@@ -186,28 +112,14 @@
                             ${product.price} Vnd
                     </p>
                     <div class="btn-group">
-                        <a class="btn btn-primary" href="/products?action=detail&id=${product.id}">
-                            Xem chi tiết
+                        <a href="/products?action=delete&id=${product.id}">
+                            <button class="btn btn-danger" onclick="confirmDelete()">
+                                Thêm giỏ hàng
+                            </button>
                         </a>
-                        <a class="btn btn-success" href="/products?action=edit&id=${product.id}">
-                            Chỉnh sửa
-                        </a>
-                        <!-- Thẻ checkbox dùng để kiểm tra hiển thị modal -->
-                        <label for="delete-${loop.index}" class="btn btn-danger">Xóa</label>
-                        <input type="checkbox" id="delete-${loop.index}" class="confirm-checkbox" />
-                        <div class="confirm-modal">
-                            <div class="modal-content">
-                                <p>Bạn có chắc chắn muốn xóa? ${product.name}</p>
-                                <!-- Nút Xác nhận -->
-                                <a href="http://localhost:8080/home?path=delete&id=${product.id}" class="btn btn-danger">Xác nhận</a>
-                                <!-- Nút Hủy -->
-                                <label for="delete-${loop.index}" class="btn btn-secondary">Hủy</label>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </c:forEach>
+<%--            </c:forEach>--%>
         </div>
     </div>
 </div>

@@ -71,19 +71,20 @@ public class ProductService implements IProductService<Product> {
 
     @Override
     public void edit(int id, Product product) {
-        String sql = "update product set name = ?, price = ?, quantity = ?, image = ?, description = ? where id = ?";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, product.getName());
-            preparedStatement.setDouble(2, product.getPrice());
-            preparedStatement.setInt(3, product.getQuantity());
-            preparedStatement.setString(4, product.getImage());
-            preparedStatement.setString(5, product.getDescription());
-            preparedStatement.setInt(6, id);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+            String sql = "update product set name =?, price=?, quantity=?, idCategory=?, image=?, description=? where id=?";
+            try {
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, product.getName());
+                preparedStatement.setDouble(2, product.getPrice());
+                preparedStatement.setInt(3, product.getQuantity());
+                preparedStatement.setInt(4, product.getCategory().getId());
+                preparedStatement.setString(5, product.getImage());
+                preparedStatement.setString(6, product.getDescription());
+                preparedStatement.setInt(7, id);
+                preparedStatement.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
     }
 
     @Override
@@ -92,7 +93,6 @@ public class ProductService implements IProductService<Product> {
                 + "FROM product p "
                 + "JOIN category c ON p.idCategory = c.id "
                 + "WHERE p.id = ?";
-//        Product product = null;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -117,4 +117,37 @@ public class ProductService implements IProductService<Product> {
         }
         return null;
     }
+    @Override
+    public List<Product> findByName(String name) {
+        List<Product> productList = new ArrayList<>();
+        String sql = "SELECT p.id, p.name, p.price, p.quantity, p.image, p.description, c.id AS category_id, c.name AS category_name "
+                + "FROM product p "
+                + "JOIN category c ON p.idCategory = c.id "
+                + "WHERE lower(p.name) LIKE lower(?)";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, "%" + name + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Category category = new Category(resultSet.getInt("category_id"),
+                        resultSet.getString("category_name"));
+                Product product = new Product(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"),
+                        resultSet.getDouble("price"),
+                        resultSet.getInt("quantity"),
+                        category,
+                        resultSet.getString("image"),
+                        resultSet.getString("description")
+                );
+                productList.add(product);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return productList;
+    }
+
 }
