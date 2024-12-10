@@ -73,11 +73,13 @@
         color: #333;
         border: none;
     }
+
     .hero-section img {
         object-fit: cover;
         width: 100%;
         height: 100%;
     }
+
     .product-card img {
         width: 100%;
         height: 200px;
@@ -149,7 +151,8 @@
         <div class="row">
             <div class="col-md-8">
                 <input type="hidden" name="action" value="search">
-                <input type="text" class="form-control" name="keyword" placeholder="Tìm kiếm sản phẩm theo tên hoặc ID..." required>
+                <input type="text" class="form-control" name="keyword"
+                       placeholder="Tìm kiếm sản phẩm theo tên hoặc ID..." required>
                 <button type="submit" class="btn btn-primary w-100">Tìm kiếm</button>
             </div>
             <div class="col-md-4">
@@ -163,54 +166,41 @@
          src="https://storage.googleapis.com/a1aa/image/m0sbgnrGezUbW6xCoscdhrfsLMXP7nNpuaYHq2EMltlmwW4TA.jpg"
          width="100%"/>
 </div>
-
+<br><br><br><br>
 <div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <c:forEach items="${products}" var="product">
-                <div class="product-card">
-                    <div class="discount">
-                    </div>
-                    <img alt="Căn hộ 3PN ở Pearl Plaza" height="300"
-                         src="${product.image}"
-                         width="400"/>
-                    <h5>
-                            ${product.name}
-                    </h5>
-                    <p class="description">
-                        ${product.description}
-                    </p>
-                    <p class="price">
-                    </p>
-                    <p class="price" style="font-size: 18px; color: #d9534f; font-weight: bold;">
-                            ${product.price} Vnd
-                    </p>
-                    <div class="btn-group">
-                        <a class="btn btn-primary" href="/products?action=detail&id=${product.id}">
-                            Xem chi tiết
-                        </a>
-                        <a class="btn btn-success" href="/products?action=edit&id=${product.id}">
-                            Chỉnh sửa
-                        </a>
-                        <!-- Thẻ checkbox dùng để kiểm tra hiển thị modal -->
-                        <label for="delete-${loop.index}" class="btn btn-danger">Xóa</label>
-                        <input type="checkbox" id="delete-${loop.index}" class="confirm-checkbox" />
-                        <div class="confirm-modal">
-                            <div class="modal-content">
-                                <p>Bạn có chắc chắn muốn xóa? ${product.name}</p>
-                                <!-- Nút Xác nhận -->
-                                <a href="http://localhost:8080/home?path=delete&id=${product.id}" class="btn btn-danger">Xác nhận</a>
-                                <!-- Nút Hủy -->
-                                <label for="delete-${loop.index}" class="btn btn-secondary">Hủy</label>
-                            </div>
+    <div class="row product-row">
+        <c:forEach items="${products}" var="product">
+            <div class="col-md-4 product-card">
+                <div class="discount">
+                </div>
+                <img alt="Căn hộ 3PN ở Pearl Plaza" height="300" src="${product.image}" width="400"/>
+                <h5>${product.name}</h5>
+                <p class="description">${product.description}</p>
+                <p class="price" style="font-size: 18px; color: #d9534f; font-weight: bold;">${product.price} Vnd</p>
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="/products?action=detail&id=${product.id}">Xem chi tiết</a>
+                    <a class="btn btn-success" href="/products?action=edit&id=${product.id}">Chỉnh sửa</a>
+                    <!-- Thẻ checkbox dùng để kiểm tra hiển thị modal -->
+                    <label for="delete-${loop.index}" class="btn btn-danger">Xóa</label>
+                    <input type="checkbox" id="delete-${loop.index}" class="confirm-checkbox"/>
+                    <div class="confirm-modal">
+                        <div class="modal-content">
+                            <p>Bạn có chắc chắn muốn xóa? ${product.name}</p>
+                            <!-- Nút Xác nhận -->
+                            <a href="http://localhost:8080/products?action=delete&id=${product.id}"
+                               class="btn btn-danger">Xác nhận</a>
+                            <!-- Nút Hủy -->
+                            <label for="delete-${loop.index}" class="btn btn-secondary">Hủy</label>
                         </div>
-
                     </div>
                 </div>
-            </c:forEach>
-        </div>
+            </div>
+        </c:forEach>
+
     </div>
 </div>
+
+
 <footer class="bg-dark text-white py-4">
     <div class="container">
         <div class="row">

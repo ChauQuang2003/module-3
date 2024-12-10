@@ -84,6 +84,7 @@ public class ProductController extends HttpServlet {
 
     private void deleteProduct(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
+        System.out.println(id);
         productService.delete(id);
         resp.sendRedirect("/products?action=home");
     }
